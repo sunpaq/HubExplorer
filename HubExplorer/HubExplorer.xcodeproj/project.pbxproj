@@ -15,10 +15,10 @@
 		FD11FF80297BC821009F7702 /* HubExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF7F297BC821009F7702 /* HubExplorerUITestsLaunchTests.swift */; };
 		FD11FF8D297BC851009F7702 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8C297BC851009F7702 /* SearchResultModel.swift */; };
 		FD11FF8F297BC882009F7702 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8E297BC882009F7702 /* APIService.swift */; };
-		FD11FF91297BD5FF009F7702 /* SearchResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF90297BD5FF009F7702 /* SearchResultVM.swift */; };
+		FD11FF91297BD5FF009F7702 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */; };
 		FD11FF93297BDAD6009F7702 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF92297BDAD6009F7702 /* APITest.swift */; };
 		FD11FF94297BDAF9009F7702 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8E297BC882009F7702 /* APIService.swift */; };
-		FD11FF95297BDAFD009F7702 /* SearchResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF90297BD5FF009F7702 /* SearchResultVM.swift */; };
+		FD11FF95297BDAFD009F7702 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */; };
 		FD11FF96297BDB00009F7702 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8C297BC851009F7702 /* SearchResultModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		FD11FF7F297BC821009F7702 /* HubExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FD11FF8C297BC851009F7702 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
 		FD11FF8E297BC882009F7702 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		FD11FF90297BD5FF009F7702 /* SearchResultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVM.swift; sourceTree = "<group>"; };
+		FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
 		FD11FF92297BDAD6009F7702 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,8 +105,8 @@
 			children = (
 				FD11FF62297BC820009F7702 /* HubExplorerApp.swift */,
 				FD11FF64297BC820009F7702 /* ContentView.swift */,
+				FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */,
 				FD11FF8C297BC851009F7702 /* SearchResultModel.swift */,
-				FD11FF90297BD5FF009F7702 /* SearchResultVM.swift */,
 				FD11FF8E297BC882009F7702 /* APIService.swift */,
 				FD11FF66297BC821009F7702 /* Assets.xcassets */,
 				FD11FF68297BC821009F7702 /* Preview Content */,
@@ -272,7 +272,7 @@
 				FD11FF65297BC820009F7702 /* ContentView.swift in Sources */,
 				FD11FF63297BC820009F7702 /* HubExplorerApp.swift in Sources */,
 				FD11FF8F297BC882009F7702 /* APIService.swift in Sources */,
-				FD11FF91297BD5FF009F7702 /* SearchResultVM.swift in Sources */,
+				FD11FF91297BD5FF009F7702 /* ContentView+ViewModel.swift in Sources */,
 				FD11FF8D297BC851009F7702 /* SearchResultModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +283,7 @@
 			files = (
 				FD11FF96297BDB00009F7702 /* SearchResultModel.swift in Sources */,
 				FD11FF94297BDAF9009F7702 /* APIService.swift in Sources */,
-				FD11FF95297BDAFD009F7702 /* SearchResultVM.swift in Sources */,
+				FD11FF95297BDAFD009F7702 /* ContentView+ViewModel.swift in Sources */,
 				FD11FF93297BDAD6009F7702 /* APITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

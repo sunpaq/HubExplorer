@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel = ViewModelMock()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("HubExplorer")
+            TextField("please input", text: $viewModel.userInput, prompt: nil)
+            List {
+                ForEach(viewModel.resultList) { item in
+                    Text(item.name)
+                }
+            }
+            .listStyle(.plain)
         }
         .padding()
     }
