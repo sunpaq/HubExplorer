@@ -18,24 +18,30 @@ extension ContentView {
         }
     }
     
-    class ViewModel: ObservableObject {
+    @MainActor class ViewModel: ObservableObject {
+        
+        enum UIState {
+            case error(String)
+            case loading
+            case success
+        }
+        
+        ///UI
+        @Published var uistate: UIState = .success
+        
+        ///non-UI
         @Published var userInput: String = "" {
             didSet {
-                refreshResult()
+                Task {
+                    await refreshResult()
+                }
             }
         }
         
         @Published var resultList: [ResultItem] = []
         
-        func refreshResult() {
+        func refreshResult() async {
             //TODO
-        }
-    }
-    
-    class ViewModelMock: ViewModel {
-        
-        override func refreshResult() {
-            resultList.append(ResultItem(name: userInput))
         }
     }
 }

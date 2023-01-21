@@ -20,6 +20,7 @@
 		FD11FF94297BDAF9009F7702 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8E297BC882009F7702 /* APIService.swift */; };
 		FD11FF95297BDAFD009F7702 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */; };
 		FD11FF96297BDB00009F7702 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8C297BC851009F7702 /* SearchResultModel.swift */; };
+		FD11FF98297C0BC1009F7702 /* ContentView+ViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF97297C0BC1009F7702 /* ContentView+ViewModelMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FD11FF8E297BC882009F7702 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
 		FD11FF92297BDAD6009F7702 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
+		FD11FF97297C0BC1009F7702 /* ContentView+ViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModelMock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FD11FF62297BC820009F7702 /* HubExplorerApp.swift */,
 				FD11FF64297BC820009F7702 /* ContentView.swift */,
 				FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */,
+				FD11FF97297C0BC1009F7702 /* ContentView+ViewModelMock.swift */,
 				FD11FF8C297BC851009F7702 /* SearchResultModel.swift */,
 				FD11FF8E297BC882009F7702 /* APIService.swift */,
 				FD11FF66297BC821009F7702 /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 				FD11FF8F297BC882009F7702 /* APIService.swift in Sources */,
 				FD11FF91297BD5FF009F7702 /* ContentView+ViewModel.swift in Sources */,
 				FD11FF8D297BC851009F7702 /* SearchResultModel.swift in Sources */,
+				FD11FF98297C0BC1009F7702 /* ContentView+ViewModelMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

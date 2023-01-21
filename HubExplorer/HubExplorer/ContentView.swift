@@ -14,13 +14,24 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("HubExplorer")
-            TextField("please input", text: $viewModel.userInput, prompt: nil)
-            List {
-                ForEach(viewModel.resultList) { item in
-                    Text(item.name)
+            TextField("please input", text: $viewModel.userInput)
+            switch viewModel.uistate {
+            case .error(let errorMessage):
+                Spacer()
+                Text(errorMessage)
+                Spacer()
+            case .loading:
+                Spacer()
+                ProgressView()
+                Spacer()
+            case .success:
+                List {
+                    ForEach(viewModel.resultList) { item in
+                        Text(item.name)
+                    }
                 }
+                .listStyle(.plain)
             }
-            .listStyle(.plain)
         }
         .padding()
     }
