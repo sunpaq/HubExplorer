@@ -43,7 +43,7 @@ extension ContentView {
             loading = true
             Task(priority: .background) {
                 if !userInput.isEmpty {
-                    resultList.append(ResultItem(name: query))
+                    resultList.append(ResultItem(name: query, avator: ""))
                 } else {
                     resultList.removeAll()
                 }

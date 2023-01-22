@@ -13,9 +13,11 @@ extension ContentView {
     struct ResultItem: Identifiable, Equatable {
         let id = UUID()
         let name: String
+        let avator: String
         
-        init(name: String) {
+        init(name: String, avator: String) {
             self.name = name
+            self.avator = avator
         }
     }
     
@@ -87,7 +89,9 @@ extension ContentView {
                     return
                 }
                 resultTotalCount = response.totalCount
-                let list = response.items.map({ ResultItem(name: $0.fullName) })
+                let list = response.items.map({
+                    ResultItem(name: $0.fullName, avator: $0.owner.avatarUrl)
+                })
                 if page <= 1 {
                     resultList.removeAll()
                 }

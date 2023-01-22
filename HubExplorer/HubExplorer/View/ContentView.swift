@@ -42,18 +42,10 @@ struct ContentView: View {
                 List {
                     Section {
                         ForEach(viewModel.resultList) { item in
-                            HStack {
-                                Text(item.name)
-                                Spacer()
-                            }
-                            .onAppear {
-                                if item == viewModel.resultList.last {
-                                    Task(priority: .userInitiated) {
-                                        loadingMore = true
-                                        await viewModel.loadMoreResult()
-                                        loadingMore = false
-                                    }
-                                }
+                            NavigationLink {
+                                DetailView(viewModel: DetailView.ViewModel(repoName: item.name))
+                            } label: {
+                                ItemView(item: item, viewModel: viewModel, loadingMore: $loadingMore)
                             }
                         }
                     } header: {
@@ -78,6 +70,45 @@ struct ContentView: View {
             if phase == .inactive {
                 APIService.shared.persist()
             }
+        }
+    }
+}
+
+struct ItemView: View {
+    
+    let item: ContentView.ResultItem
+    @StateObject var viewModel: ContentView.ViewModel
+    @Binding var loadingMore: Bool
+    
+    var body: some View {
+        HStack {
+            AsyncImage(url: URL(string: item.avator)) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+            } placeholder: {
+                Image(systemName: "person.crop.circle.fill")
+                    .resizable()
+                    .scaledToFill()
+            }
+            .frame(width: 44, height: 44)
+            .background(.gray)
+            .clipShape(Circle())
+            Text(item.name)
+            Spacer()
+        }
+        .onAppear {
+            if item == viewModel.resultList.last {
+                handleLastItemAppear()
+            }
+        }
+    }
+    
+    func handleLastItemAppear() {
+        Task(priority: .background) {
+            loadingMore = true
+            await viewModel.loadMoreResult()
+            loadingMore = false
         }
     }
 }

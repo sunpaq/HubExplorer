@@ -47,11 +47,15 @@ class APIService {
     }
     
     func persist() {
-        UserDefaults.standard.set(queue, forKey: persistKey)
+        Task(priority: .background) {
+            UserDefaults.standard.set(queue, forKey: persistKey)
+        }
     }
     
     func restore() {
-        guard let data = UserDefaults.standard.object(forKey: persistKey) as? [TimeInterval] else { return }
-        self.queue = data
+        Task(priority: .background) {
+            guard let data = UserDefaults.standard.object(forKey: persistKey) as? [TimeInterval] else { return }
+            self.queue = data
+        }
     }
 }
