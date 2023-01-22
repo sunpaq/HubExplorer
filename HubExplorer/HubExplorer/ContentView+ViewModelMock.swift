@@ -20,7 +20,7 @@ extension ContentView {
         
         let testcase: TestCase = .success
         
-        override func refreshResult(query: String) async {
+        override func refreshResult(query: String, page: UInt, perPage: UInt) async {
             switch testcase {
             case .loading:
                 await testLoading()
@@ -34,11 +34,13 @@ extension ContentView {
         }
         
         func testLoading() async {
-            uistate = .loading
+            uistate = .success
+            loading = true
         }
         
         func testSuccess(query: String) async {
-            uistate = .loading
+            uistate = .success
+            loading = true
             Task(priority: .background) {
                 if !userInput.isEmpty {
                     resultList.append(ResultItem(name: query))
@@ -46,6 +48,7 @@ extension ContentView {
                     resultList.removeAll()
                 }
                 uistate = .success
+                loading = false
             }
         }
         

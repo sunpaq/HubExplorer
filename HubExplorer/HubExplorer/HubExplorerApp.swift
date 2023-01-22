@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct HubExplorerApp: App {
+        
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
+            .onAppear {
+                APIService.shared.restore()
+            }
         }
     }
 }

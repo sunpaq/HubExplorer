@@ -19,17 +19,19 @@ protocol APIRequest {
     
     var query: String { get }
         
-    func fire() async throws -> ResponseType
+    func fire(page: UInt, perPage: UInt) async throws -> ResponseType
 }
 
 extension APIRequest {
     
-    func fire() async throws -> ResponseType {
+    func fire(page: UInt, perPage: UInt) async throws -> ResponseType {
         guard var url = URL(string: base + "/" + path) else {
             throw API.ErrorType.invalidURL
         }
         url.append(queryItems: [
-            URLQueryItem(name: "q", value: query)
+            URLQueryItem(name: "q", value: query),
+            URLQueryItem(name: "page", value: "\(page)"),
+            URLQueryItem(name: "per_page", value: "\(perPage)")
         ])
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue

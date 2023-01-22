@@ -10,7 +10,7 @@ import Combine
 
 extension ContentView {
     
-    struct ResultItem: Identifiable {
+    struct ResultItem: Identifiable, Equatable {
         let id = UUID()
         let name: String
         
@@ -21,22 +21,27 @@ extension ContentView {
     
     @MainActor class ViewModel: ObservableObject {
         
-        enum UIState {
-            case error(String)
-            case notfound
-            case loading
+        enum UIState: Equatable {
+            case welcome
             case success
+            case notfound
             case limit
+            case error(String)
         }
         
         ///UI
-        @Published var uistate: UIState = .success
+        @Published var uistate: UIState = .welcome
+        @Published var loading: Bool = false
         @Published var countdown: Int = 0
         
         ///non-UI
         @Published var userInput: String = ""
         
         @Published var resultList: [ResultItem] = []
+        @Published var resultTotalCount: Int = 0
+        
+        private var currentPage: UInt = 1
+        private let perPage: UInt = 30
         
         private var freezeTimer: Timer? {
             willSet {
@@ -53,39 +58,57 @@ extension ContentView {
                 .removeDuplicates()
                 .sink { [weak self] newValue in
                     guard let self = self else { return }
+                    if newValue.isEmpty && self.uistate == .welcome { return }
                     Task(priority: .userInitiated) {
-                        await self.refreshResult(query: newValue)
+                        await self.refreshResult(query: newValue, page: 1, perPage: self.perPage)
                     }
                 }.store(in: &cancellables)
         }
         
-        func refreshResult(query: String) async {
+        func refreshResult(query: String, page: UInt, perPage: UInt) async {
             guard !query.isEmpty else {
                 resultList.removeAll()
                 uistate = .notfound
+                loading = false
                 return
             }
             stopFreezeTimer()
             do {
-                uistate = .loading
+                if page <= 1 {
+                    uistate = .success
+                    loading = true
+                }
                 let request = SearchRepository(inputQuery: query)
-                let response = try await APIService.shared.schedule(request: request)
-                resultList.removeAll()
-                let list = response.items.map({ ResultItem(name: $0.fullName) })
-                guard !list.isEmpty else {
+                let response = try await APIService.shared.schedule(request: request, page: page, perPage: perPage)
+                guard response.totalCount > 0, response.items.count > 0 else {
+                    resultList.removeAll()
                     uistate = .notfound
+                    loading = false
                     return
+                }
+                resultTotalCount = response.totalCount
+                let list = response.items.map({ ResultItem(name: $0.fullName) })
+                if page <= 1 {
+                    resultList.removeAll()
                 }
                 resultList.append(contentsOf: list)
                 uistate = .success
+                loading = false
             } catch API.ErrorType.exceedLimit(let freeze) {
                 countdown = Int(freeze)
                 uistate = .limit
+                loading = false
                 startFreezeTimer()
             } catch {
                 debugPrint(error)
                 uistate = .error("\(error)")
+                loading = false
             }
+        }
+        
+        func loadMoreResult() async {
+            self.currentPage += 1
+            await refreshResult(query: userInput, page: self.currentPage, perPage: self.perPage)
         }
         
         func startFreezeTimer() {
@@ -110,7 +133,7 @@ extension ContentView {
         func handleFreezeEnd() {
             stopFreezeTimer()
             Task(priority: .userInitiated) {
-                await refreshResult(query: userInput)
+                await refreshResult(query: userInput, page: 1, perPage: self.perPage)
             }
         }
     }
