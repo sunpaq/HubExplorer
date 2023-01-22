@@ -17,14 +17,40 @@ final class APITest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testSearch() async throws {
+    func testSingleRequest() async throws {
+        debugPrint("SEARCH START")
         do {
-            debugPrint("SEARCH START")
-            let response = await SearchResultModel().search(input: "monkc")
-            XCTAssertNotNil(response)
-            debugPrint("SEARCH RESULT: \(response!)")
+            let response = try await SearchRepository(inputQuery: "monkc").fire()
+            debugPrint("SEARCH RESULT: \(response)")
         } catch {
-            throw error
+            debugPrint("SEARCH FAILED: \(error)")
+        }
+    }
+    
+    func testExceedLimit() async throws {
+        let queries = [
+            "a",
+            "ab",
+            "abc",
+            "abcd",
+            "abcde",
+            "abcde f",
+            "abcde fg",
+            "abcde fgh",
+            "abcde fghi",
+            "abcde fghij",
+            "abcde fghij k",
+        ]
+        do {
+            for q in queries {
+                let request = SearchRepository(inputQuery: q)
+                _ = try await APIService.shared.schedule(request: request)
+            }
+            XCTFail("didn't throw exceed limit error")
+        } catch API.ErrorType.exceedLimit(let freeze) {
+            debugPrint("SUCCESS freeze:\(freeze)")
+        } catch {
+            debugPrint("ERROR: \(error)")
         }
     }
 }

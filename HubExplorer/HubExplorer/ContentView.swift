@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewModel = ViewModelMock()
-    
+    //@StateObject var viewModel = ViewModelMock()
+    @StateObject var viewModel = ViewModel()
+
     var body: some View {
         VStack {
             Text("HubExplorer")
@@ -19,6 +20,10 @@ struct ContentView: View {
             case .error(let errorMessage):
                 Spacer()
                 Text(errorMessage)
+                Spacer()
+            case .notfound:
+                Spacer()
+                Text("Not found")
                 Spacer()
             case .loading:
                 Spacer()
@@ -31,6 +36,10 @@ struct ContentView: View {
                     }
                 }
                 .listStyle(.plain)
+            case .limit:
+                Spacer()
+                Text("Please wait \(viewModel.countdown) seconds")
+                Spacer()
             }
         }
         .padding()
