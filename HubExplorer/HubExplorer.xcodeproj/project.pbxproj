@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		FD11FF63297BC820009F7702 /* HubExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF62297BC820009F7702 /* HubExplorerApp.swift */; };
-		FD11FF65297BC820009F7702 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF64297BC820009F7702 /* ContentView.swift */; };
+		FD11FF65297BC820009F7702 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF64297BC820009F7702 /* ListView.swift */; };
 		FD11FF67297BC821009F7702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD11FF66297BC821009F7702 /* Assets.xcassets */; };
 		FD11FF6A297BC821009F7702 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD11FF69297BC821009F7702 /* Preview Assets.xcassets */; };
 		FD11FF7E297BC821009F7702 /* HubExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF7D297BC821009F7702 /* HubExplorerUITests.swift */; };
 		FD11FF80297BC821009F7702 /* HubExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF7F297BC821009F7702 /* HubExplorerUITestsLaunchTests.swift */; };
 		FD11FF8F297BC882009F7702 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8E297BC882009F7702 /* APIService.swift */; };
-		FD11FF91297BD5FF009F7702 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */; };
+		FD11FF91297BD5FF009F7702 /* ListView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF90297BD5FF009F7702 /* ListView+ViewModel.swift */; };
 		FD11FF93297BDAD6009F7702 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF92297BDAD6009F7702 /* APITest.swift */; };
 		FD11FF94297BDAF9009F7702 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF8E297BC882009F7702 /* APIService.swift */; };
-		FD11FF98297C0BC1009F7702 /* ContentView+ViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF97297C0BC1009F7702 /* ContentView+ViewModelMock.swift */; };
+		FD11FF98297C0BC1009F7702 /* ListView+ViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF97297C0BC1009F7702 /* ListView+ViewModelMock.swift */; };
 		FD11FF9B297C1434009F7702 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF9A297C1434009F7702 /* APIRequest.swift */; };
 		FD11FF9D297C15CF009F7702 /* APIConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FF9C297C15CF009F7702 /* APIConst.swift */; };
 		FD11FFA1297C16F7009F7702 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FFA0297C16F7009F7702 /* SearchRepository.swift */; };
@@ -49,7 +49,7 @@
 /* Begin PBXFileReference section */
 		FD11FF5F297BC820009F7702 /* HubExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD11FF62297BC820009F7702 /* HubExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubExplorerApp.swift; sourceTree = "<group>"; };
-		FD11FF64297BC820009F7702 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FD11FF64297BC820009F7702 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		FD11FF66297BC821009F7702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD11FF69297BC821009F7702 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD11FF6F297BC821009F7702 /* HubExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HubExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,9 +57,9 @@
 		FD11FF7D297BC821009F7702 /* HubExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubExplorerUITests.swift; sourceTree = "<group>"; };
 		FD11FF7F297BC821009F7702 /* HubExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FD11FF8E297BC882009F7702 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
+		FD11FF90297BD5FF009F7702 /* ListView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListView+ViewModel.swift"; sourceTree = "<group>"; };
 		FD11FF92297BDAD6009F7702 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
-		FD11FF97297C0BC1009F7702 /* ContentView+ViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModelMock.swift"; sourceTree = "<group>"; };
+		FD11FF97297C0BC1009F7702 /* ListView+ViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListView+ViewModelMock.swift"; sourceTree = "<group>"; };
 		FD11FF9A297C1434009F7702 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		FD11FF9C297C15CF009F7702 /* APIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConst.swift; sourceTree = "<group>"; };
 		FD11FFA0297C16F7009F7702 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 		FD11FF61297BC820009F7702 /* HubExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				FD11FFAD297D53D1009F7702 /* Model */,
 				FD11FFAB297D380D009F7702 /* View */,
 				FD11FF99297C141B009F7702 /* API */,
 				FD11FF62297BC820009F7702 /* HubExplorerApp.swift */,
@@ -153,33 +154,32 @@
 		FD11FF99297C141B009F7702 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				FD11FF9E297C16C5009F7702 /* Common */,
-				FD11FFA0297C16F7009F7702 /* SearchRepository.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		FD11FF9E297C16C5009F7702 /* Common */ = {
-			isa = PBXGroup;
-			children = (
 				FD11FF9C297C15CF009F7702 /* APIConst.swift */,
 				FD11FF8E297BC882009F7702 /* APIService.swift */,
 				FD11FF9A297C1434009F7702 /* APIRequest.swift */,
 			);
-			path = Common;
+			path = API;
 			sourceTree = "<group>";
 		};
 		FD11FFAB297D380D009F7702 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FD11FFA7297D3448009F7702 /* WebView.swift */,
-				FD11FF64297BC820009F7702 /* ContentView.swift */,
-				FD11FF90297BD5FF009F7702 /* ContentView+ViewModel.swift */,
-				FD11FF97297C0BC1009F7702 /* ContentView+ViewModelMock.swift */,
+				FD11FF64297BC820009F7702 /* ListView.swift */,
+				FD11FF90297BD5FF009F7702 /* ListView+ViewModel.swift */,
+				FD11FF97297C0BC1009F7702 /* ListView+ViewModelMock.swift */,
 				FD11FFA5297D30CE009F7702 /* DetailView.swift */,
 				FD11FFA9297D37F7009F7702 /* DetailView+ViewModel.swift */,
+				FD11FFA7297D3448009F7702 /* WebView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FD11FFAD297D53D1009F7702 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD11FFA0297C16F7009F7702 /* SearchRepository.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD11FF65297BC820009F7702 /* ContentView.swift in Sources */,
+				FD11FF65297BC820009F7702 /* ListView.swift in Sources */,
 				FD11FFA8297D3448009F7702 /* WebView.swift in Sources */,
 				FD11FFA6297D30CE009F7702 /* DetailView.swift in Sources */,
 				FD11FF9B297C1434009F7702 /* APIRequest.swift in Sources */,
@@ -320,9 +320,9 @@
 				FD11FF63297BC820009F7702 /* HubExplorerApp.swift in Sources */,
 				FD11FFAA297D37F7009F7702 /* DetailView+ViewModel.swift in Sources */,
 				FD11FF8F297BC882009F7702 /* APIService.swift in Sources */,
-				FD11FF91297BD5FF009F7702 /* ContentView+ViewModel.swift in Sources */,
+				FD11FF91297BD5FF009F7702 /* ListView+ViewModel.swift in Sources */,
 				FD11FFA1297C16F7009F7702 /* SearchRepository.swift in Sources */,
-				FD11FF98297C0BC1009F7702 /* ContentView+ViewModelMock.swift in Sources */,
+				FD11FF98297C0BC1009F7702 /* ListView+ViewModelMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

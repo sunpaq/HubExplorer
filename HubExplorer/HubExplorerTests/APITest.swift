@@ -20,7 +20,7 @@ final class APITest: XCTestCase {
     func testSingleRequest() async throws {
         debugPrint("SEARCH START")
         do {
-            let response = try await SearchRepository(inputQuery: "monkc").fire()
+            let response = try await SearchRepository(inputQuery: "monkc").fire(page: 1, perPage: 30)
             debugPrint("SEARCH RESULT: \(response)")
         } catch {
             debugPrint("SEARCH FAILED: \(error)")
@@ -44,7 +44,7 @@ final class APITest: XCTestCase {
         do {
             for q in queries {
                 let request = SearchRepository(inputQuery: q)
-                _ = try await APIService.shared.schedule(request: request)
+                _ = try await APIService.shared.schedule(request: request, page: 1, perPage: 30)
             }
             XCTFail("didn't throw exceed limit error")
         } catch API.ErrorType.exceedLimit(let freeze) {

@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-extension ContentView {
+extension ListView {
     
     struct ResultItem: Identifiable, Equatable {
         let id = UUID()

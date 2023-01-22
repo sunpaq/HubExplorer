@@ -52,10 +52,3 @@ extension APIRequest {
         }
     }
 }
-
-private extension String {
-    
-    func toBase64Encode() -> String {
-        Data(self.utf8).base64EncodedString()
-    }
-}

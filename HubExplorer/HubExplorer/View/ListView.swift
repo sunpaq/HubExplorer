@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ListView: View {
     
     @Environment(\.scenePhase) private var scenePhase
     
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel: ViewModel
     
     @State var loadingMore: Bool = false
     
@@ -76,8 +76,8 @@ struct ContentView: View {
 
 struct ItemView: View {
     
-    let item: ContentView.ResultItem
-    @StateObject var viewModel: ContentView.ViewModel
+    let item: ListView.ResultItem
+    @StateObject var viewModel: ListView.ViewModel
     @Binding var loadingMore: Bool
     
     var body: some View {
@@ -113,8 +113,8 @@ struct ItemView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ListView(viewModel: ListView.ViewModel())
     }
 }

@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct HubExplorerApp: App {
-        
+    
+    let testmode = false
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                if testmode {
+                    ListView(viewModel: ListView.ViewModelMock())
+                } else {
+                    ListView(viewModel: ListView.ViewModel())
+                }
             }
             .onAppear {
                 APIService.shared.restore()

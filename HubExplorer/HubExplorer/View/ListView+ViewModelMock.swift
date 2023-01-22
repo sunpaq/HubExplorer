@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ContentView {
+extension ListView {
     
     class ViewModelMock: ViewModel {
         
